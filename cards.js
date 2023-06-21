@@ -30,16 +30,15 @@ function getTwoCards() {
       return axios
         .get(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`)
         .then((res) => {
-          let suit = res.data.cards[0].suit;
-          let value = res.data.cards[0].value;
+          let { value, suit } = res.data.cards[0];
+
           const deck = res.data.deck_id;
           console.log(`First card is ${value} of ${suit}`);
           return axios
             .get(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`)
             .then((res) => {
-              let suit = res.data.cards[0].suit;
-              let value = res.data.cards[0].value;
-              const deck = res.data.deck_id;
+              let { value, suit } = res.data.cards[0];
+
               console.log(`Second card is ${value} of ${suit}`);
             });
         });
