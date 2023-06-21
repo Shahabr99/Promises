@@ -21,7 +21,7 @@ button.addEventListener("click", function () {
     let degree = Math.random() * 90 - 45;
     let x = Math.random() * 40 - 20;
     let y = Math.random() * 40 - 20;
-    console.log(x, y);
+
     let image = cardsArr[click].image;
     click++;
     const card = document.createElement("div");
